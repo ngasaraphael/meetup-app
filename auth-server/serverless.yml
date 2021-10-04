@@ -1,0 +1,32 @@
+service: auth-server
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-central-1
+  timeout: 60 # optional, in seconds, default is 6
+  environment:
+    CLIENT_ID: ${file(config.json):CLIENT_ID}
+    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+    PROJECT_ID: ${file(config.json):PROJECT_ID}
+    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
+functions:
+  getAuthURL:
+    handler: handler.getAuthURL
+    events:
+      - http:
+          path: api/get-auth-url
+          method: get
+  getAccessToken:
+    handler: handler.getAccessToken
+    events:
+      - http:
+          path: api/token/{code}
+          method: get
+  getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
+          method: get
+# {"access_token":"ya29.a0ARrdaM-B1EN0AWob0BYh7EdePfezL9rvFkz4mkHTGLd0VRG8IN9V-NsrKAYHkfd5FfBDcLPPSbhtp-5iTtOEOZqbMlaqnvVL34DuUIpSs_KO5DgLCMQ9jdoaW9YfA14Io9gVdM70ggJiSQt-Ypm1MTeyIh3N","refresh_token":"1//09jKvIMTSGVczCgYIARAAGAkSNwF-L9Ir_DXhKWtmAubJ48bJ1IbY9gmm3918Y1OSXBTxYrcF-_RPFLKZm-U8c9b5FYjyCIyJcWk","scope":"https://www.googleapis.com/auth/calendar.readonly","token_type":"Bearer","expiry_date":1633291755080}
