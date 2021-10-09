@@ -13,17 +13,18 @@ class Event extends Component {
   };
 
   render() {
-    const events = this.props.events;
+    const { event } = this.props;
+
     return (
       <div className='events'>
         <div className='event'>
-          <h3 className='summary'>{events.summary}</h3>
-          <h4 className='location'>{events.location}</h4>
+          <h3 className='summary'>{event.summary}</h3>
+          <h4 className='location'>{event.location}</h4>
           <h4 className='eventDate'>
-            start: {events.start.dateTime} - Time Zone: {events.start.timeZone}
+            start: {event.start.dateTime} - Time Zone: {event.start.timeZone}
           </h4>
           {this.state.showDetails === true && (
-            <p className='description'>{events.description}</p>
+            <p className='description'>{event.description}</p>
           )}
 
           {this.state.showDetails === false && (

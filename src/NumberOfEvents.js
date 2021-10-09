@@ -9,7 +9,12 @@ class NumberOfEvents extends Component {
     const numberOfEvents = this.state.numberOfEvents;
     return (
       <div className='numberOfEvents'>
-        <input type='text' className='selectedNumber' value={numberOfEvents} />
+        <input
+          type='text'
+          className='selectedNumber'
+          value={numberOfEvents}
+          onChange={(e) => this.setState(numberOfEvents(e.target.value))}
+        />
       </div>
     );
   }

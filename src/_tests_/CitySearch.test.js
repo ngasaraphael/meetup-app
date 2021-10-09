@@ -6,7 +6,8 @@ import { extractLocations } from '../api';
 
 describe('<CitySearch /> component', () => {
   //beforeAll() function for all test in CitySearch
-  let locations, CitySearchWrapper;
+  let locations;
+  let CitySearchWrapper;
   beforeAll(() => {
     locations = extractLocations(mockData);
     CitySearchWrapper = shallow(<CitySearch locations={locations} />);
@@ -67,6 +68,7 @@ describe('<CitySearch /> component', () => {
   });
 
   //test if selecting a suggestion changes query state
+
   test('selecting a suggestion should change query state', () => {
     CitySearchWrapper.setState({
       query: 'Berlin',
