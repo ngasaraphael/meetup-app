@@ -10,7 +10,9 @@ describe('<CitySearch /> component', () => {
   let CitySearchWrapper;
   beforeAll(() => {
     locations = extractLocations(mockData);
-    CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+    CitySearchWrapper = shallow(
+      <CitySearch locations={locations} updateEvents={() => {}} />
+    );
   });
 
   //test if unput field exist in CitySearch with class city
@@ -68,7 +70,6 @@ describe('<CitySearch /> component', () => {
   });
 
   //test if selecting a suggestion changes query state
-
   test('selecting a suggestion should change query state', () => {
     CitySearchWrapper.setState({
       query: 'Berlin',
@@ -76,5 +77,27 @@ describe('<CitySearch /> component', () => {
     const suggestions = CitySearchWrapper.state('suggestions');
     CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
     expect(CitySearchWrapper.state('query')).toBe(suggestions[0]);
+  });
+
+  //test if selecting CitySearch input reveals the suggestions list
+  test('selecting CitySearch input reveals the suggestions list', () => {
+    CitySearchWrapper.find('.city').simulate('focus');
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+    expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({
+      display: 'none',
+    });
+  });
+
+  //test if selecting a suggestion should hide the suggestions list
+  test('selecting a suggestion should hide the suggestions list', () => {
+    CitySearchWrapper.setState({
+      query: 'Berlin',
+      showSuggestions: undefined,
+    });
+    CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(false);
+    expect(CitySearchWrapper.find('.suggestions').prop('style')).toEqual({
+      display: 'none',
+    });
   });
 });

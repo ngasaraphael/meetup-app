@@ -4,6 +4,7 @@ class Event extends Component {
   constructor() {
     super();
     this.state = {
+      event: {},
       showDetails: false,
     };
   }
