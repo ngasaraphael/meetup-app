@@ -51,10 +51,10 @@ const removeQuery = () => {
 export const getEvents = async () => {
   NProgress.start();
 
-  // if (window.location.href.startsWith('http://localhost')) {
-  //   NProgress.done();
-  //   return mockData;
-  // }
+  if (window.location.href.startsWith('http://localhost')) {
+    NProgress.done();
+    return mockData;
+  }
 
   const token = await getAccessToken();
 
