@@ -7,13 +7,10 @@ import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      events: [],
-      locations: [],
-    };
-  }
+  state = {
+    events: [],
+    locations: [],
+  };
 
   componentDidMount() {
     this.mounted = true;

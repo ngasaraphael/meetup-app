@@ -12,10 +12,10 @@ class NumberOfEvents extends Component {
         <label htmlFor='eventNumber'>Number of Events</label>
         <input
           name='eventNumber'
-          type='text'
+          type='number'
           className='selectedNumber'
           value={numberOfEvents}
-          onChange={(e) => this.setState(numberOfEvents(e.target.value))}
+          onChange={(e) => this.setState({ numberOfEvents: e.target.value })}
         />
       </div>
     );
