@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
-  state = {
-    numberOfEvents: 32,
+  constructor(props) {
+    super(props);
+    this.state = {
+      numberOfEvents: props.numberOfEvents,
+      error: false,
+    };
+  }
+
+  updatenumberOfEvents = (eventCount) => {
+    if (eventCount < 1 || eventCount > 32) {
+      return this.setState({
+        numberOfEvents: eventCount,
+        error: true,
+      });
+    } else {
+      this.setState({
+        numberOfEvents: eventCount,
+        error: false,
+      });
+      this.props.updateNumberOfEvents(null, eventCount);
+    }
   };
 
   render() {
-    const numberOfEvents = this.state.numberOfEvents;
+    const { numberOfEvents, error } = this.state;
     return (
       <div className='numberOfEvents'>
         <label htmlFor='eventNumber'>Number of Events</label>
@@ -15,8 +34,11 @@ class NumberOfEvents extends Component {
           type='number'
           className='selectedNumber'
           value={numberOfEvents}
-          onChange={(e) => this.setState({ numberOfEvents: e.target.value })}
+          onChange={(e) => this.updatenumberOfEvents(e.target.value)}
         />
+        {error && (
+          <span style={{ color: 'red' }}>Must be between 1 and 32</span>
+        )}
       </div>
     );
   }
