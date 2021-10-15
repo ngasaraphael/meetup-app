@@ -9,9 +9,9 @@ describe('<NumberOfEvents /> component', () => {
   });
 
   // test default number of event as 2
-  test('default number of event as 32', () => {
+  test('default number of event as undefined', () => {
     expect(NumberOfEventsWrapper.find('.selectedNumber').prop('value')).toEqual(
-      32
+      undefined
     );
   });
 });

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { getEvents, extractLocations } from './api';
-
 import './App.css';
 import './nprogress.css';
 import CitySearch from './CitySearch';
@@ -11,7 +10,7 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    numberOfEvents: 32,
+    numberOfEvents: 250,
   };
 
   componentDidMount() {
@@ -30,7 +29,7 @@ class App extends Component {
   updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
       const locationEvents =
-        !location || location === 'All Cities'
+        !location || location === 'See all Cities'
           ? events
           : events.filter((event) => event.location === location);
 

@@ -10,7 +10,7 @@ class NumberOfEvents extends Component {
   }
 
   updatenumberOfEvents = (eventCount) => {
-    if (eventCount < 1 || eventCount > 32) {
+    if (eventCount < 1 || eventCount > 250) {
       return this.setState({
         numberOfEvents: eventCount,
         error: true,
@@ -37,7 +37,7 @@ class NumberOfEvents extends Component {
           onChange={(e) => this.updatenumberOfEvents(e.target.value)}
         />
         {error && (
-          <span style={{ color: 'red' }}>Must be between 1 and 32</span>
+          <span style={{ color: 'red' }}>Must be between 1 and 250</span>
         )}
       </div>
     );
