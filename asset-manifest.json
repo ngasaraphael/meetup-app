@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/meetup-app/static/css/main.452fb988.chunk.css",
-    "main.js": "/meetup-app/static/js/main.a806fd4b.chunk.js",
-    "main.js.map": "/meetup-app/static/js/main.a806fd4b.chunk.js.map",
-    "runtime-main.js": "/meetup-app/static/js/runtime-main.3670c94c.js",
-    "runtime-main.js.map": "/meetup-app/static/js/runtime-main.3670c94c.js.map",
-    "static/js/2.1d5484ce.chunk.js": "/meetup-app/static/js/2.1d5484ce.chunk.js",
-    "static/js/2.1d5484ce.chunk.js.map": "/meetup-app/static/js/2.1d5484ce.chunk.js.map",
-    "static/js/3.8311d54b.chunk.js": "/meetup-app/static/js/3.8311d54b.chunk.js",
-    "static/js/3.8311d54b.chunk.js.map": "/meetup-app/static/js/3.8311d54b.chunk.js.map",
+    "main.js": "/meetup-app/static/js/main.1ce7053c.chunk.js",
+    "main.js.map": "/meetup-app/static/js/main.1ce7053c.chunk.js.map",
+    "runtime-main.js": "/meetup-app/static/js/runtime-main.aa5729dd.js",
+    "runtime-main.js.map": "/meetup-app/static/js/runtime-main.aa5729dd.js.map",
+    "static/js/2.938b2563.chunk.js": "/meetup-app/static/js/2.938b2563.chunk.js",
+    "static/js/2.938b2563.chunk.js.map": "/meetup-app/static/js/2.938b2563.chunk.js.map",
+    "static/js/3.07d464d2.chunk.js": "/meetup-app/static/js/3.07d464d2.chunk.js",
+    "static/js/3.07d464d2.chunk.js.map": "/meetup-app/static/js/3.07d464d2.chunk.js.map",
     "index.html": "/meetup-app/index.html",
     "static/css/main.452fb988.chunk.css.map": "/meetup-app/static/css/main.452fb988.chunk.css.map",
-    "static/js/2.1d5484ce.chunk.js.LICENSE.txt": "/meetup-app/static/js/2.1d5484ce.chunk.js.LICENSE.txt"
+    "static/js/2.938b2563.chunk.js.LICENSE.txt": "/meetup-app/static/js/2.938b2563.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3670c94c.js",
-    "static/js/2.1d5484ce.chunk.js",
+    "static/js/runtime-main.aa5729dd.js",
+    "static/js/2.938b2563.chunk.js",
     "static/css/main.452fb988.chunk.css",
-    "static/js/main.a806fd4b.chunk.js"
+    "static/js/main.1ce7053c.chunk.js"
   ]
 }
