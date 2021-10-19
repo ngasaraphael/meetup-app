@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 
 class Event extends Component {
   constructor() {
@@ -21,9 +22,9 @@ class Event extends Component {
         <div className='event'>
           <h3 className='summary'>{event.summary}</h3>
           <h4 className='location'>{event.location}</h4>
-          <h4 className='eventDate'>
+          <p className='eventDate'>
             start: {event.start.dateTime} - Time Zone: {event.start.timeZone}
-          </h4>
+          </p>
           {this.state.showDetails === true && (
             <p className='description'>{event.description}</p>
           )}
