@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
       numberOfEvents: props.numberOfEvents,
-      error: false,
+      errorText: ' ',
     };
   }
 
@@ -13,22 +14,22 @@ class NumberOfEvents extends Component {
     if (eventCount < 1 || eventCount > 250) {
       return this.setState({
         numberOfEvents: eventCount,
-        error: true,
+        errorText: 'Must be between 1 and 250',
       });
     } else {
       this.setState({
         numberOfEvents: eventCount,
-        error: false,
+
+        errorText: ' ',
       });
       this.props.updateNumberOfEvents(null, eventCount);
     }
   };
 
   render() {
-    const { numberOfEvents, error } = this.state;
+    const { numberOfEvents, errorText } = this.state;
     return (
       <div className='numberOfEvents'>
-        <label htmlFor='eventNumber'>Number of Events</label>
         <input
           name='eventNumber'
           type='number'
@@ -36,9 +37,7 @@ class NumberOfEvents extends Component {
           value={numberOfEvents}
           onChange={(e) => this.updatenumberOfEvents(e.target.value)}
         />
-        {error && (
-          <span style={{ color: 'red' }}>Must be between 1 and 250</span>
-        )}
+        <ErrorAlert text={errorText} />
       </div>
     );
   }
