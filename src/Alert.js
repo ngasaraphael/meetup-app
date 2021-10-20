@@ -9,6 +9,10 @@ class Alert extends Component {
   getStyle = () => {
     return {
       color: this.color,
+      width: '300px',
+      backgroundColor: '#dfe3ed',
+      marginTop: '10px',
+      textAlign: 'center',
     };
   };
 
