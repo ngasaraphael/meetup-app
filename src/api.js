@@ -21,7 +21,7 @@ export const checkToken = async (accessToken) => {
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   )
     .then((res) => res.json())
-    .catch((error) => error.json());
+    .catch((error) => error);
 
   return result;
 };
@@ -38,6 +38,12 @@ export const getEvents = async () => {
   if (window.location.href.startsWith('http://localhost')) {
     NProgress.done();
     return mockData;
+  }
+
+  if (!navigator.onLine) {
+    const events = await localStorage.getItem('lastEvents');
+    NProgress.done();
+    return events ? JSON.parse(events).events : [];
   }
 
   const token = await getAccessToken();
@@ -59,23 +65,6 @@ export const getEvents = async () => {
   }
 };
 
-export const getToken = async (code) => {
-  const encodeCode = encodeURIComponent(code);
-  const { access_token } = await fetch(
-    'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token' +
-      '/' +
-      encodeCode
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .catch((error) => error);
-
-  access_token && localStorage.setItem('access_token', access_token);
-
-  return access_token;
-};
-
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
 
@@ -95,4 +84,19 @@ export const getAccessToken = async () => {
     return code && getToken(code);
   }
   return accessToken;
+};
+
+export const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const { access_token } = await fetch(
+    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => error);
+
+  access_token && localStorage.setItem('access_token', access_token);
+
+  return access_token;
 };

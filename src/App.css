@@ -2,8 +2,8 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: #6a89cc;
-  color: #0c2461;
+  background-color: #e6e6e6;
+  color: #011c1a;
   line-height: 1.7;
 }
 
@@ -94,7 +94,7 @@ input[type='number'] {
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
-  background-color: #0c2461;
+  background-color: #340385;
   color: white;
   border: none;
 }
@@ -110,7 +110,7 @@ input[type='number'] {
   outline: none;
   border: none;
   color: white;
-  background-color: #6a89cc;
+  background-color: #1a0142;
   cursor: pointer;
   font-size: 15px;
 }

@@ -10,7 +10,7 @@ class Alert extends Component {
     return {
       color: this.color,
       width: '300px',
-      backgroundColor: '#dfe3ed',
+      backgroundColor: '#f5d7d7',
       marginTop: '10px',
       textAlign: 'center',
       borderRadius: '4px',
@@ -40,5 +40,11 @@ class ErrorAlert extends Alert {
   }
 }
 
-export { ErrorAlert };
-export { InfoAlert };
+class WarningAlert extends Alert {
+  constructor(props) {
+    super(props);
+    this.color = 'green';
+  }
+}
+
+export { InfoAlert, ErrorAlert, WarningAlert };
