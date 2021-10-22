@@ -13,6 +13,7 @@ class Alert extends Component {
       backgroundColor: '#dfe3ed',
       marginTop: '10px',
       textAlign: 'center',
+      borderRadius: '4px',
     };
   };
 
