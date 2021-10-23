@@ -14,8 +14,7 @@ export const checkToken = async (accessToken) => {
     { mode: 'no-cors' }
   )
     .then((res) => res.json())
-    // .catch((error) => error);
-    .catch((error) => error.json());
+    .catch((error) => error);
 
   return result;
 };
