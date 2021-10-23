@@ -57,7 +57,9 @@ export const getEvents = async () => {
       'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' +
       '/' +
       token;
-    const result = await axios.get(url);
+    const result = await axios.get(url, {
+      mode: 'no-cors',
+    });
     if (result.data) {
       var locations = extractLocations(result.data.events);
       localStorage.setItem('lastEvents', JSON.stringify(result.data));
@@ -79,7 +81,10 @@ export const getAccessToken = async () => {
     const code = await searchParams.get('code');
     if (!code) {
       const results = await axios.get(
-        'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
+        'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url',
+        {
+          mode: 'no-cors',
+        }
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
