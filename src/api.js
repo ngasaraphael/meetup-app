@@ -2,10 +2,18 @@ import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
-export const extractLocations = (events) => {
-  var extractLocations = events.map((event) => event.location);
-  var locations = [...new Set(extractLocations)];
-  return locations;
+const removeQuery = () => {
+  if (window.history.pushState && window.location.pathname) {
+    var newurl =
+      window.location.protocol +
+      '//' +
+      window.location.host +
+      window.location.pathname;
+    window.history.pushState('', '', newurl);
+  } else {
+    newurl = window.location.protocol + '//' + window.location.host;
+    window.history.pushState('', '', newurl);
+  }
 };
 
 export const checkToken = async (accessToken) => {
@@ -19,34 +27,11 @@ export const checkToken = async (accessToken) => {
   return result;
 };
 
-export const getToken = async (code) => {
-  const encodeCode = encodeURIComponent(code);
-  const { access_token } = await fetch(
-    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`,
-    { mode: 'no-cors' }
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .catch((error) => error);
-
-  access_token && localStorage.setItem('access_token', access_token);
-
-  return access_token;
-};
-
-const removeQuery = () => {
-  if (window.history.pushState && window.location.pathname) {
-    var newurl =
-      window.location.protocol +
-      '//' +
-      window.location.host +
-      window.location.pathname;
-    window.history.pushState('', '', newurl);
-  } else {
-    newurl = window.location.protocol + '//' + window.location.host;
-    window.history.pushState('', '', newurl);
-  }
+export const extractLocations = (events) => {
+  console.log(events);
+  var extractLocations = events.map((event) => event.location);
+  var locations = [...new Set(extractLocations)];
+  return locations;
 };
 
 export const getEvents = async () => {
@@ -102,4 +87,20 @@ export const getAccessToken = async () => {
     return code && getToken(code);
   }
   return accessToken;
+};
+
+export const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const { access_token } = await fetch(
+    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`,
+    { mode: 'no-cors' }
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => error);
+
+  access_token && localStorage.setItem('access_token', access_token);
+
+  return access_token;
 };
