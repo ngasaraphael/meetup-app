@@ -18,7 +18,8 @@ const removeQuery = () => {
 
 export const checkToken = async (accessToken) => {
   const result = await fetch(
-    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`,
+    { mode: 'no-cors' }
   )
     .then((res) => res.json())
     .catch((error) => error);
@@ -55,7 +56,7 @@ export const getEvents = async () => {
       'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' +
       '/' +
       token;
-    const result = await axios.get(url);
+    const result = await axios.get(url, { mode: 'no-cors' });
     if (result.data) {
       var locations = extractLocations(result.data.events);
       localStorage.setItem('lastEvents', JSON.stringify(result.data));
@@ -77,7 +78,8 @@ export const getAccessToken = async () => {
     const code = await searchParams.get('code');
     if (!code) {
       const results = await axios.get(
-        'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
+        'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url',
+        { mode: 'no-cors' }
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
@@ -90,7 +92,8 @@ export const getAccessToken = async () => {
 export const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`
+    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`,
+    { mode: 'no-cors' }
   )
     .then((res) => {
       return res.json();
