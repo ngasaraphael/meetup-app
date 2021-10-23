@@ -18,10 +18,7 @@ const removeQuery = () => {
 
 export const checkToken = async (accessToken) => {
   const result = await fetch(
-    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`,
-    {
-      mode: 'no-cors',
-    }
+    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   )
     .then((res) => res.json())
     .catch((error) => error);
@@ -30,6 +27,7 @@ export const checkToken = async (accessToken) => {
 };
 
 export const extractLocations = (events) => {
+  console.log(events);
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
   return locations;
@@ -57,9 +55,7 @@ export const getEvents = async () => {
       'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' +
       '/' +
       token;
-    const result = await axios.get(url, {
-      mode: 'no-cors',
-    });
+    const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
       localStorage.setItem('lastEvents', JSON.stringify(result.data));
@@ -81,10 +77,7 @@ export const getAccessToken = async () => {
     const code = await searchParams.get('code');
     if (!code) {
       const results = await axios.get(
-        'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url',
-        {
-          mode: 'no-cors',
-        }
+        'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
@@ -97,10 +90,7 @@ export const getAccessToken = async () => {
 export const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`,
-    {
-      mode: 'no-cors',
-    }
+    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`
   )
     .then((res) => {
       return res.json();
@@ -111,13 +101,3 @@ export const getToken = async (code) => {
 
   return access_token;
 };
-
-//CORS POLICY
-// const allowCrossDomain = function (req, res, next) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   next();
-// };
-
-// app.get('/', allowCrossDomain, (req, res) => {
-//   res.send('file upload');
-// });
