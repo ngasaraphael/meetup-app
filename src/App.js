@@ -19,7 +19,7 @@ class App extends Component {
 
   async componentDidMount() {
     //no internet connection
-    if (navigator.onLine == false) {
+    if (navigator.onLine === false) {
       this.setState({
         warningText: 'App not connected to the internet',
       });
@@ -46,7 +46,6 @@ class App extends Component {
 
   updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
-      console.log('location===', location);
       const locationEvents =
         !location || location === 'all'
           ? events
@@ -92,18 +91,3 @@ class App extends Component {
 }
 
 export default App;
-
-// componentDidMount() {
-//   if (navigator.onLine == false) {
-//     this.setState({
-//       warningText: 'App not connected to the internet',
-//     });
-//   }
-
-//   this.mounted = true;
-//   getEvents().then((events) => {
-//     if (this.mounted) {
-//       this.setState({ events, locations: extractLocations(events) });
-//     }
-//   });
-// }

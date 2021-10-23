@@ -18,7 +18,10 @@ const removeQuery = () => {
 
 export const checkToken = async (accessToken) => {
   const result = await fetch(
-    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`,
+    {
+      mode: 'no-cors',
+    }
   )
     .then((res) => res.json())
     .catch((error) => error);
@@ -89,7 +92,10 @@ export const getAccessToken = async () => {
 export const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`
+    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/{encodeCode}`,
+    {
+      mode: 'no-cors',
+    }
   )
     .then((res) => {
       return res.json();
@@ -100,3 +106,13 @@ export const getToken = async (code) => {
 
   return access_token;
 };
+
+//CORS POLICY
+// const allowCrossDomain = function (req, res, next) {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// };
+
+// app.get('/', allowCrossDomain, (req, res) => {
+//   res.send('file upload');
+// });
