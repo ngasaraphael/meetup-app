@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/meetup-app/static/css/main.32248415.chunk.css",
-    "main.js": "/meetup-app/static/js/main.f6178121.chunk.js",
-    "main.js.map": "/meetup-app/static/js/main.f6178121.chunk.js.map",
-    "runtime-main.js": "/meetup-app/static/js/runtime-main.f3c1a64f.js",
-    "runtime-main.js.map": "/meetup-app/static/js/runtime-main.f3c1a64f.js.map",
-    "static/js/2.7b22cdfe.chunk.js": "/meetup-app/static/js/2.7b22cdfe.chunk.js",
-    "static/js/2.7b22cdfe.chunk.js.map": "/meetup-app/static/js/2.7b22cdfe.chunk.js.map",
-    "static/js/3.021478e9.chunk.js": "/meetup-app/static/js/3.021478e9.chunk.js",
-    "static/js/3.021478e9.chunk.js.map": "/meetup-app/static/js/3.021478e9.chunk.js.map",
+    "main.js": "/meetup-app/static/js/main.14894311.chunk.js",
+    "main.js.map": "/meetup-app/static/js/main.14894311.chunk.js.map",
+    "runtime-main.js": "/meetup-app/static/js/runtime-main.262354d0.js",
+    "runtime-main.js.map": "/meetup-app/static/js/runtime-main.262354d0.js.map",
+    "static/js/2.d546c778.chunk.js": "/meetup-app/static/js/2.d546c778.chunk.js",
+    "static/js/2.d546c778.chunk.js.map": "/meetup-app/static/js/2.d546c778.chunk.js.map",
+    "static/js/3.8dcded20.chunk.js": "/meetup-app/static/js/3.8dcded20.chunk.js",
+    "static/js/3.8dcded20.chunk.js.map": "/meetup-app/static/js/3.8dcded20.chunk.js.map",
     "index.html": "/meetup-app/index.html",
-    "precache-manifest.1716732c031ad6e08b075d1117b74f41.js": "/meetup-app/precache-manifest.1716732c031ad6e08b075d1117b74f41.js",
+    "precache-manifest.463ac2e9573d9ffc8ff0670c85f9f139.js": "/meetup-app/precache-manifest.463ac2e9573d9ffc8ff0670c85f9f139.js",
     "service-worker.js": "/meetup-app/service-worker.js",
     "static/css/main.32248415.chunk.css.map": "/meetup-app/static/css/main.32248415.chunk.css.map",
-    "static/js/2.7b22cdfe.chunk.js.LICENSE.txt": "/meetup-app/static/js/2.7b22cdfe.chunk.js.LICENSE.txt"
+    "static/js/2.d546c778.chunk.js.LICENSE.txt": "/meetup-app/static/js/2.d546c778.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f3c1a64f.js",
-    "static/js/2.7b22cdfe.chunk.js",
+    "static/js/runtime-main.262354d0.js",
+    "static/js/2.d546c778.chunk.js",
     "static/css/main.32248415.chunk.css",
-    "static/js/main.f6178121.chunk.js"
+    "static/js/main.14894311.chunk.js"
   ]
 }
