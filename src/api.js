@@ -92,8 +92,9 @@ export const getAccessToken = async () => {
 export const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    `https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`,
-    { mode: 'no-cors' }
+    'https://5nt53ns73l.execute-api.eu-central-1.amazonaws.com/dev/api/token' +
+      '/' +
+      encodeCode
   )
     .then((res) => {
       return res.json();
