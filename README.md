@@ -12,5 +12,4 @@ The app can be viewed here. To run it locally yourself, clone the repository, an
 #npm install
 #Start application with npm and run in browser
 #By default the app will run a local server on port: 3000
-
 #npm run start
