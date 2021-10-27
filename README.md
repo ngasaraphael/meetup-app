@@ -1,70 +1,50 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+FEATURE 1: FILTER EVENTS BY CITY
+As a user, I should be able to filter events by city so that I can see the list of events that take place in that city.
+SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
+Given: user hasn’t searched for any city
+When: the user opens the app
+Then: the user should see a list of all upcoming events
+SCENARIO 2: USER SHOULD SEE A LIST OF SUGGESTIONS WHEN THEY SEARCH FOR A CITY.
+Given: the main page is open
+When: user starts typing in the city textbox
+Then: the user should see a list of cities (suggestions) that match what they’ve typed
+SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
+Given: the user was typing “Berlin” in the city textbox. And the list of suggested cities is showing
+When: the user selects a city (e.g., “Berlin, Germany”) from the list
+Then: their city should be changed to that city (i.e., “Berlin, Germany”). And the user should receive a list of upcoming events in that city
+FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
+As a user, I should be able to show/hide details of an event so that I can more/less details of events.
+SCENARIO 1: AN EVENT ELEMENT IS COLLAPSED BY DEFAULT. Given: the user is on main page
+When: the elements are collapsed
+Then: the user should see the event elements
+  
+ SCENARIO 2: USER CAN EXPAND AN EVENT TO SEE ITS DETAILS. Given: the user is on main page
+When: the user clicks to an element
+Then: the element expands and the user can see the event details
+SCENARIO 3: USER CAN COLLAPSE AN EVENT TO HIDE ITS DETAILS. Given: the user sees the expanded element
+When: the user clicks to the element
+Then: the element collapses and the user can't see the event details
+FEATURE 3: SPECIFY NUMBER OF EVENTS
+As a user, I should be able to specify the number of elements so that I can see more/less elements.
+SCENARIO 1: WHEN USER HASN’T SPECIFIED A NUMBER, 32 IS THE DEFAULT NUMBER. Given: the user opens the app
+When: the user sees the elements Then: there are 32 elements
+SCENARIO 2: USER CAN CHANGE THE NUMBER OF EVENTS THEY WANT TO SEE. Given: the user opens the app
+When: the user specify the number of events Then: there will be specified number of elements
+FEATURE 4: USE THE APP WHEN OFFLINE
+As a user, I should be able to use the app when offline so that I can see the events without internet connection.
+SCENARIO 1: SHOW CACHED DATA WHEN THERE’S NO INTERNET CONNECTION. Given: the user has no internet connection
+When: the user wants to look at the events
+Then: the user will be able to see the last events he/she looked at with internet connection
+  
+ SCENARIO 2: SHOW ERROR WHEN USER CHANGES THE SETTINGS (CITY, TIME RANGE).
+Given: the user has no internet connection
+When: the user changes the setting
+Then: the user won’t be able to see the events and will get an error message
+FEATURE 5: DATA VISUALIZATION
+As a user, I should be able to see a chart showing upcoming events so that I can see the events in every city.
+SCENARIO 1: SHOW A CHART WITH THE NUMBER OF UPCOMING EVENTS IN EACH CITY.
+Given: the user looks at an event
+When: the user clicks on the chart
+Then: the user will be able to see a chart showing upcoming events in each city separately.
+ 
