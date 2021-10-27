@@ -18,28 +18,28 @@ By default the app will run a local server on port: 3000
 npm run start
 ```
 
-**MAIN FEATURES OF APP AND USER STORIES**
+**Main features of app and user stories**
 
-*FEATURE 1: FILTER EVENTS BY CITY*
+*Feature 1: Filter events by city*
 ```
 As a user, I should be able to filter events by city so that I can see the list of events that take place in that city.
 ```
-*FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS*
+*Feature 2: Show/Hide AN events details*
 ```
 As a user, I should be able to show/hide details of an event so that I can more/less details of events.
 ```
 
-*FEATURE 3: SPECIFY NUMBER OF EVENTS*
+*Feature 3: Specify number of events*
 ```
 As a user, I should be able to specify the number of elements so that I can see more/less elements.
 ```
 
-*FEATURE 4: USE THE APP WHEN OFFLINE*
+*Feature 4: Use app when offline*
 ```
 As a user, I should be able to use the app when offline so that I can see the events without internet connection.
 ```
 
-*FEATURE 5: DATA VISUALIZATION*
+*Feature 5: Data visualization*
 ```
 As a user, I should be able to see a chart showing upcoming events so that I can see the events in every city.
 ```
