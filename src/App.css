@@ -41,6 +41,10 @@ input[type='number'] {
   box-shadow: 0 6px 20px rgba(4, 53, 146, 0.17);
 }
 
+input[type='text'] {
+  margin-bottom: 50px;
+}
+
 .city {
   width: 300px;
 }
@@ -79,10 +83,6 @@ input[type='number'] {
 
 .suggestions > li:hover {
   background-color: #bcdcdb;
-}
-
-.charts h4 {
-  margin: 60px 0 20px 0;
 }
 
 .EventList {

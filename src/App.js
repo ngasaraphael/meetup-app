@@ -95,6 +95,8 @@ class App extends Component {
     if (showWelcomeScreen === undefined) return <div className='App' />;
     return (
       <div className='App'>
+        <h2>Tech Events</h2>
+        <p>Find the latest tech events around the world</p>
         <NumberOfEvents
           numberOfEvents={numberOfEvents}
           updateNumberOfEvents={this.updateEvents}
@@ -104,7 +106,6 @@ class App extends Component {
         <WarningAlert text={warningText} />
 
         <div className='charts'>
-          <h4>Events in each city</h4>
           <div className='data-vis-wrapper'>
             <EventGenre events={this.state.events} />
             <ResponsiveContainer height={400}>
