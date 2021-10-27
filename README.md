@@ -5,11 +5,11 @@ Meetup-app is a serverless, progressive web application that makes use of the Go
 
 
 
-#Quick Start
+**Quick Start**
 The app can be viewed here. To run it locally yourself, clone the repository, and complete the following steps:
 
-#Install dependencies
-#npm install
-#Start application with npm and run in browser
-#By default the app will run a local server on port: 3000
-#npm run start
+**Install dependencies**
+npm install
+Start application with npm and run in browser
+By default the app will run a local server on port: 3000
+npm run start
