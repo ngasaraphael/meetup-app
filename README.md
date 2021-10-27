@@ -6,7 +6,9 @@ Meetup-app is a serverless, progressive web application that makes use of the Go
 
 
 **Quick Start**
+```
 The app can be viewed here. To run it locally yourself, clone the repository, and complete the following steps:
+```
 
 **Install dependencies**
 ```
