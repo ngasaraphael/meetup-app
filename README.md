@@ -1,5 +1,6 @@
 
 FEATURE 1: FILTER EVENTS BY CITY
+
 As a user, I should be able to filter events by city so that I can see the list of events that take place in that city.
 
 SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
