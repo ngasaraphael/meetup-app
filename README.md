@@ -2,7 +2,8 @@
 
 Meetup-app is a serverless, progressive web application that makes use of the Google Calendar API to fetch upcoming tech events in cities around the world. Built with ReactJS, using a test-driven development approach this app is hosted by the Amazone Web Services platform and works when user is not connected to the internet.
 
-
+# live
+https://ngasaraphael.github.io/meetup-app/
 
 **Quick Start**
 ```
